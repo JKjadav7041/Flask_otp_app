@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - {{ user.username }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <h2>🎉 Welcome!</h2>
+        
+        <div class="user-info">
+            <h3>{{ user.username }}</h3>
+            <p>📧 {{ user.email }}</p>
+            {% if user.last_login %}
+            <p style="font-size: 12px; color: rgba(255, 255, 255, 0.4); margin-top: 10px;">
+                Last login: {{ user.last_login[:19] }}
+            </p>
+            {% endif %}
+        </div>
+
+        <form method="POST" id="welcomeForm">
+            <div class="input-group">
+                <label for="welcome_text">Your Personal Note</label>
+                <textarea 
+                    name="welcome_text" 
+                    id="welcome_text"
+                    placeholder="Write something about yourself... (max 500 characters)"
+                    maxlength="500"
+                >{{ user.welcome_text if user.welcome_text else '' }}</textarea>
+                <div class="helper-text" id="charCount">
+                    {{ user.welcome_text|length if user.welcome_text else 0 }}/500 characters
+                </div>
+            </div>
+
+            <button type="submit" id="saveBtn">💾 Save Changes</button>
+        </form>
+
+        <a href="/logout">
+            <button class="logout-btn" type="button">🚪 Logout</button>
+        </a>
+    </div>
+
+    <script>
+        // Character counter
+        const textarea = document.getElementById('welcome_text');
+        const charCount = document.getElementById('charCount');
+
+        textarea.addEventListener('input', function() {
+            const length = this.value.length;
+            charCount.textContent = `${length}/500 characters`;
+            
+            if (length >= 450) {
+                charCount.style.color = '#ff4757';
+            } else {
+                charCount.style.color = 'rgba(255, 255, 255, 0.5)';
+            }
+        });
+
+        // Form submission
+        document.getElementById('welcomeForm').addEventListener('submit', function(e) {
+            const btn = document.getElementById('saveBtn');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+            btn.classList.add('loading');
+        });
+
+        // Auto-dismiss flash messages
+        setTimeout(() => {
+            const flashes = document.querySelectorAll('.flash');
+            flashes.forEach(flash => {
+                flash.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => flash.remove(), 300);
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

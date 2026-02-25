@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - OTP Auth</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <h2>Welcome Back</h2>
+        
+        <form method="POST" id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username"
+                    name="username" 
+                    placeholder="Enter your username" 
+                    required
+                    minlength="3"
+                    maxlength="20"
+                    pattern="[a-zA-Z0-9_]+"
+                    title="Only letters, numbers and underscore allowed"
+                >
+            </div>
+
+            <button type="submit" id="submitBtn">Generate OTP</button>
+        </form>
+
+        <p>New user? <a href="/">Create account</a></p>
+    </div>
+
+    <script>
+        // Auto-dismiss flash messages
+        setTimeout(() => {
+            const flashes = document.querySelectorAll('.flash');
+            flashes.forEach(flash => {
+                flash.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => flash.remove(), 300);
+            });
+        }, 5000);
+
+        // Form submission handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            btn.classList.add('loading');
+        });
+    </script>
+</body>
+</html>

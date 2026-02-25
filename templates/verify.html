@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - OTP Auth</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <a href="/" class="back-btn">Back</a>
+        <h2>Check your inbox</h2>
+        
+        <p style="margin-bottom: 20px;">Enter the 6-digit security code we sent to your email</p>
+
+        <form method="POST" id="verifyForm">
+            <div class="otp-container">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+            </div>
+            
+            <input type="hidden" name="otp" id="otpValue">
+            <button type="submit" id="verifyBtn">Verify</button>
+        </form>
+
+        <div class="resend-section">
+            <p style="margin: 0;">Didn't receive the email? Check the spam folder.</p>
+            <button class="resend-btn" id="resendBtn" onclick="resendOTP()">Resend OTP</button>
+            <p style="margin-top: 10px; font-size: 12px;" id="timer"></p>
+        </div>
+    </div>
+
+    <script>
+        // OTP Input Handling
+        const otpInputs = document.querySelectorAll('.otp-input');
+        const otpValue = document.getElementById('otpValue');
+        const verifyForm = document.getElementById('verifyForm');
+
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                const value = e.target.value;
+                
+                // Only allow numbers
+                if (!/^\d$/.test(value)) {
+                    e.target.value = '';
+                    return;
+                }
+
+                // Move to next input
+                if (value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+
+                // Update hidden input
+                updateOTPValue();
+            });
+
+            input.addEventListener('keydown', (e) => {
+                // Move to previous input on backspace
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            });
+
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = e.clipboardData.getData('text').trim();
+                
+                if (/^\d{6}$/.test(pastedData)) {
+                    pastedData.split('').forEach((char, i) => {
+                        if (otpInputs[i]) {
+                            otpInputs[i].value = char;
+                        }
+                    });
+                    updateOTPValue();
+                    otpInputs[5].focus();
+                }
+            });
+        });
+
+        function updateOTPValue() {
+            const otp = Array.from(otpInputs).map(input => input.value).join('');
+            otpValue.value = otp;
+        }
+
+        // Form submission
+        verifyForm.addEventListener('submit', function(e) {
+            updateOTPValue();
+            const btn = document.getElementById('verifyBtn');
+            btn.disabled = true;
+            btn.textContent = 'Verifying...';
+            btn.classList.add('loading');
+        });
+
+        // Resend OTP
+        let canResend = false;
+        let countdown = 60;
+
+        function startTimer() {
+            canResend = false;
+            countdown = 60;
+            const resendBtn = document.getElementById('resendBtn');
+            const timer = document.getElementById('timer');
+            resendBtn.disabled = true;
+            
+            const interval = setInterval(() => {
+                countdown--;
+                timer.textContent = `Resend available in ${countdown}s`;
+                
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    canResend = true;
+                    resendBtn.disabled = false;
+                    timer.textContent = '';
+                }
+            }, 1000);
+        }
+
+        async function resendOTP() {
+            if (!canResend) return;
+            
+            const resendBtn = document.getElementById('resendBtn');
+            resendBtn.disabled = true;
+            resendBtn.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch('/resend-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Clear inputs
+                    otpInputs.forEach(input => input.value = '');
+                    otpInputs[0].focus();
+                    
+                    // Show success message
+                    const flashDiv = document.createElement('div');
+                    flashDiv.className = 'flash success';
+                    flashDiv.textContent = data.message;
+                    document.querySelector('.flash-messages').appendChild(flashDiv);
+                    
+                    setTimeout(() => flashDiv.remove(), 5000);
+                    startTimer();
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (error) {
+                const flashDiv = document.createElement('div');
+                flashDiv.className = 'flash error';
+                flashDiv.textContent = error.message || 'Failed to resend OTP';
+                document.querySelector('.flash-messages').appendChild(flashDiv);
+                
+                setTimeout(() => flashDiv.remove(), 5000);
+            } finally {
+                resendBtn.disabled = false;
+                resendBtn.textContent = 'Resend OTP';
+            }
+        }
+
+        // Start timer on page load
+        startTimer();
+
+        // Auto-dismiss flash messages
+        setTimeout(() => {
+            const flashes = document.querySelectorAll('.flash');
+            flashes.forEach(flash => {
+                flash.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => flash.remove(), 300);
+            });
+        }, 5000);
+
+        // Focus first input on load
+        otpInputs[0].focus();
+    </script>
+</body>
+</html>
