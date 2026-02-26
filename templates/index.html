@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure OTP Authentication System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Landing Page Container -->
+    <div class="landing-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <!-- Logo/Brand -->
+            <div class="brand-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <div class="logo-pulse"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Secure Your Account</span>
+                    <span class="title-gradient">With Two-Step Verification</span>
+                </h1>
+                <p class="hero-description">
+                    Experience advanced security with our modern OTP authentication system. 
+                    Fast, reliable, and incredibly secure.
+                </p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="feature-grid">
+                <div class="feature-card" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Bank-Grade Security</h3>
+                    <p class="feature-text">Military-grade encryption protects your data</p>
+                </div>
+
+                <div class="feature-card" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Instant Delivery</h3>
+                    <p class="feature-text">Receive OTP codes in seconds</p>
+                </div>
+
+                <div class="feature-card" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Easy Setup</h3>
+                    <p class="feature-text">Get started in under 2 minutes</p>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="cta-section">
+                <a href="/register" class="cta-button primary-cta">
+                    <span class="cta-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <line x1="19" y1="8" x2="19" y2="14"></line>
+                            <line x1="22" y1="11" x2="16" y2="11"></line>
+                        </svg>
+                    </span>
+                    <span class="cta-text">Create Account</span>
+                    <span class="cta-arrow">→</span>
+                    <span class="cta-shine"></span>
+                </a>
+
+                <a href="/login" class="cta-button secondary-cta">
+                    <span class="cta-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                            <polyline points="10 17 15 12 10 7"></polyline>
+                            <line x1="15" y1="12" x2="3" y2="12"></line>
+                        </svg>
+                    </span>
+                    <span class="cta-text">Sign In</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-item" style="animation-delay: 0.1s;">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" style="animation-delay: 0.2s;">
+                <div class="stat-number">&lt;2s</div>
+                <div class="stat-label">Delivery Time</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" style="animation-delay: 0.3s;">
+                <div class="stat-number">256-bit</div>
+                <div class="stat-label">Encryption</div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="how-it-works">
+            <h2 class="section-heading">How It Works</h2>
+            <div class="steps-container">
+                <div class="step-card" style="animation-delay: 0.1s;">
+                    <div class="step-number">
+                        <span>1</span>
+                        <div class="step-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Create Account</h3>
+                        <p class="step-description">Enter your username and email address to get started</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="step-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+
+                <div class="step-card" style="animation-delay: 0.2s;">
+                    <div class="step-number">
+                        <span>2</span>
+                        <div class="step-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Receive OTP</h3>
+                        <p class="step-description">Get a secure 6-digit code sent to your email instantly</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="M22 7l-10 7L2 7"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="step-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+
+                <div class="step-card" style="animation-delay: 0.3s;">
+                    <div class="step-number">
+                        <span>3</span>
+                        <div class="step-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Verify & Access</h3>
+                        <p class="step-description">Enter the code and access your secure account</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Features -->
+        <div class="security-section">
+            <h2 class="section-heading">Enterprise-Level Security</h2>
+            <div class="security-grid">
+                <div class="security-item" style="animation-delay: 0.1s;">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h4>End-to-End Encryption</h4>
+                    <p>Your data is encrypted from the moment it leaves your device</p>
+                </div>
+
+                <div class="security-item" style="animation-delay: 0.2s;">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h4>Secure Storage</h4>
+                    <p>All credentials are hashed and stored securely in our database</p>
+                </div>
+
+                <div class="security-item" style="animation-delay: 0.3s;">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h4>Time-Limited Codes</h4>
+                    <p>OTP codes expire after a short time for maximum security</p>
+                </div>
+
+                <div class="security-item" style="animation-delay: 0.4s;">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h4>Audit Logs</h4>
+                    <p>Track all login attempts and account activities</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="landing-footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Secured by industry-standard encryption protocols
+                </p>
+                <div class="footer-badges">
+                    <span class="badge">🔒 SSL Encrypted</span>
+                    <span class="badge">✓ GDPR Compliant</span>
+                    <span class="badge">⚡ High Performance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Decorative Elements -->
+    <div class="floating-shapes">
+        <div class="float-shape float-1"></div>
+        <div class="float-shape float-2"></div>
+        <div class="float-shape float-3"></div>
+        <div class="float-shape float-4"></div>
+        <div class="float-shape float-5"></div>
+    </div>
+
+    <script>
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.feature-card, .step-card, .security-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Add parallax effect to floating shapes
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.float-shape');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 10;
+                const xMove = (x - 0.5) * speed;
+                const yMove = (y - 0.5) * speed;
+                shape.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+        });
+
+        // Add smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
