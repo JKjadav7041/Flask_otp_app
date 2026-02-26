@@ -684,3 +684,231 @@
 2026-02-25 19:31:53,020 - werkzeug - INFO - 10.190.43.159 - - [25/Feb/2026 19:31:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-02-25 19:31:53,075 - __main__ - WARNING - 404 error: http://10.190.43.159:5000/favicon.ico
 2026-02-25 19:31:53,081 - werkzeug - INFO - 10.190.43.159 - - [25/Feb/2026 19:31:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-26 22:24:26,565 - __main__ - CRITICAL - Failed to initialize Supabase: expected string or bytes-like object, got 'set'
+2026-02-26 22:24:26,650 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 22:24:26,650 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 22:24:26,711 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 22:24:28,217 - __main__ - CRITICAL - Failed to initialize Supabase: expected string or bytes-like object, got 'set'
+2026-02-26 22:24:28,237 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 22:24:28,275 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 22:24:29,591 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:29] "GET / HTTP/1.1" 200 -
+2026-02-26 22:24:29,684 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:29] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 22:24:29,758 - __main__ - WARNING - 404 error: http://10.190.43.159:5000/favicon.ico
+2026-02-26 22:24:29,767 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-26 22:24:39,107 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:39] "GET /login HTTP/1.1" 200 -
+2026-02-26 22:24:39,221 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:24:44,229 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:44] "POST /login HTTP/1.1" 200 -
+2026-02-26 22:24:44,277 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:24:54,701 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:54] "POST /login HTTP/1.1" 200 -
+2026-02-26 22:24:54,755 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:24:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:27:12,762 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:27:12] "POST /login HTTP/1.1" 200 -
+2026-02-26 22:27:12,817 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:27:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:27:16,008 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:27:16] "GET / HTTP/1.1" 200 -
+2026-02-26 22:27:16,064 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:27:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:27:24,867 - __main__ - ERROR - Database connection unavailable
+2026-02-26 22:27:24,873 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:27:24] "POST / HTTP/1.1" 200 -
+2026-02-26 22:27:24,930 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:27:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:29:15,721 - __main__ - CRITICAL - Failed to initialize Supabase: expected string or bytes-like object, got 'set'
+2026-02-26 22:29:15,779 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 22:29:15,779 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 22:29:15,836 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 22:29:17,866 - __main__ - CRITICAL - Failed to initialize Supabase: expected string or bytes-like object, got 'set'
+2026-02-26 22:29:17,900 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 22:29:17,905 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 22:29:20,693 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:29:20] "GET / HTTP/1.1" 200 -
+2026-02-26 22:29:21,456 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:29:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:29:21,577 - __main__ - WARNING - 404 error: http://10.190.43.159:5000/favicon.ico
+2026-02-26 22:29:21,587 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:29:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-26 22:29:53,642 - __main__ - ERROR - Database connection unavailable
+2026-02-26 22:29:53,644 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:29:53] "POST / HTTP/1.1" 200 -
+2026-02-26 22:29:53,722 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:29:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:30:31,088 - werkzeug - INFO - 127.0.0.1 - - [26/Feb/2026 22:30:31] "GET / HTTP/1.1" 200 -
+2026-02-26 22:30:31,140 - werkzeug - INFO - 127.0.0.1 - - [26/Feb/2026 22:30:31] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 22:30:31,226 - __main__ - WARNING - 404 error: http://127.0.0.1:5000/favicon.ico
+2026-02-26 22:30:31,226 - werkzeug - INFO - 127.0.0.1 - - [26/Feb/2026 22:30:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-26 22:31:05,071 - __main__ - ERROR - Database connection unavailable
+2026-02-26 22:31:05,071 - werkzeug - INFO - 127.0.0.1 - - [26/Feb/2026 22:31:05] "POST / HTTP/1.1" 200 -
+2026-02-26 22:31:05,137 - werkzeug - INFO - 127.0.0.1 - - [26/Feb/2026 22:31:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:36:32,477 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:36:32,581 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 22:36:32,581 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 22:36:32,646 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 22:36:34,708 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:36:34,736 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 22:36:34,738 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 22:36:36,117 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:36:36] "GET / HTTP/1.1" 200 -
+2026-02-26 22:36:36,337 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:36:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:36:49,999 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjivraj2008%40gmail.com "HTTP/2 200 OK"
+2026-02-26 22:36:51,027 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&username=eq.Jivraj "HTTP/2 200 OK"
+2026-02-26 22:36:51,124 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:36:51] "POST / HTTP/1.1" 200 -
+2026-02-26 22:36:51,182 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:36:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:37:05,668 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjivraj2008%40gmail.com "HTTP/2 200 OK"
+2026-02-26 22:37:05,769 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&username=eq.ansuya "HTTP/2 200 OK"
+2026-02-26 22:37:05,971 - httpx - INFO - HTTP Request: POST https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata "HTTP/2 201 Created"
+2026-02-26 22:37:05,977 - __main__ - INFO - New user created: jadavjivraj2008@gmail.com
+2026-02-26 22:37:11,251 - __main__ - INFO - OTP sent successfully to jadavjivraj2008@gmail.com
+2026-02-26 22:37:11,258 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-02-26 22:37:11,291 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:11] "GET /verify HTTP/1.1" 200 -
+2026-02-26 22:37:11,364 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:37:30,330 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjivraj2008%40gmail.com "HTTP/2 200 OK"
+2026-02-26 22:37:31,298 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jadavjivraj2008%40gmail.com "HTTP/2 200 OK"
+2026-02-26 22:37:31,298 - __main__ - INFO - User verified successfully: jadavjivraj2008@gmail.com
+2026-02-26 22:37:31,304 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:31] "[32mPOST /verify HTTP/1.1[0m" 302 -
+2026-02-26 22:37:31,467 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjivraj2008%40gmail.com "HTTP/2 200 OK"
+2026-02-26 22:37:31,555 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:31] "GET /welcome HTTP/1.1" 200 -
+2026-02-26 22:37:31,636 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:37:53,960 - __main__ - INFO - User logged out: jadavjivraj2008@gmail.com
+2026-02-26 22:37:53,962 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:53] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-26 22:37:53,989 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:53] "GET / HTTP/1.1" 200 -
+2026-02-26 22:37:54,064 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:37:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:45:31,899 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:45:31,936 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 22:45:31,936 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 22:45:31,974 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 22:45:33,957 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:45:33,982 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 22:45:34,035 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 22:45:35,645 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:45:35] "GET / HTTP/1.1" 200 -
+2026-02-26 22:45:35,843 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:45:35] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 22:48:33,774 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:48:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:50:54,737 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:50:54,772 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 22:50:54,772 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 22:50:54,830 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 22:50:57,114 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:50:57,139 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 22:50:57,149 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 22:50:57,226 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:50:57] "GET / HTTP/1.1" 200 -
+2026-02-26 22:50:57,285 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:50:57] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 22:51:12,359 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:51:12] "GET /login HTTP/1.1" 200 -
+2026-02-26 22:51:12,411 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:51:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 22:53:20,599 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\logging\\__init__.py', reloading
+2026-02-26 22:53:20,684 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\string.py', reloading
+2026-02-26 22:53:21,410 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 22:53:23,563 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 22:53:23,591 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 22:53:23,594 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 22:53:51,505 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:53:51] "GET / HTTP/1.1" 200 -
+2026-02-26 22:53:51,773 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 22:53:51] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 23:04:52,956 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 23:04:52,992 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 23:04:52,993 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 23:04:53,033 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 23:04:55,010 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 23:04:55,038 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 23:04:55,046 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 23:05:02,448 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:05:02] "GET / HTTP/1.1" 200 -
+2026-02-26 23:05:02,635 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:05:02] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 23:06:34,979 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:06:35,136 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&username=eq.Jyoti "HTTP/2 200 OK"
+2026-02-26 23:06:35,279 - httpx - INFO - HTTP Request: POST https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata "HTTP/2 201 Created"
+2026-02-26 23:06:35,309 - __main__ - INFO - New user created: jadavjyoti244@gmail.com
+2026-02-26 23:06:40,161 - __main__ - INFO - OTP sent successfully to jadavjyoti244@gmail.com
+2026-02-26 23:06:40,161 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:06:40] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-02-26 23:06:40,207 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:06:40] "GET /verify HTTP/1.1" 200 -
+2026-02-26 23:06:40,286 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:06:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:07:44,564 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:07:48,545 - __main__ - INFO - OTP sent successfully to jadavjyoti244@gmail.com
+2026-02-26 23:07:48,546 - __main__ - INFO - OTP resent to: jadavjyoti244@gmail.com
+2026-02-26 23:07:48,546 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:07:48] "POST /resend-otp HTTP/1.1" 200 -
+2026-02-26 23:08:43,181 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:08:43,784 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:08:43] "POST /verify HTTP/1.1" 200 -
+2026-02-26 23:08:43,852 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:08:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:08:59,361 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:09:00,041 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:09:00,044 - __main__ - INFO - User verified successfully: jadavjyoti244@gmail.com
+2026-02-26 23:09:00,044 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:00] "[32mPOST /verify HTTP/1.1[0m" 302 -
+2026-02-26 23:09:00,444 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:09:00,473 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:00] "GET /welcome HTTP/1.1" 200 -
+2026-02-26 23:09:00,544 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:09:23,957 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:09:24,061 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jadavjyoti244%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:09:24,067 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:24] "POST /welcome HTTP/1.1" 200 -
+2026-02-26 23:09:24,113 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:09:35,308 - __main__ - INFO - User logged out: jadavjyoti244@gmail.com
+2026-02-26 23:09:35,310 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-26 23:09:35,354 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:35] "GET / HTTP/1.1" 200 -
+2026-02-26 23:09:35,419 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:09:49,450 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:49] "GET /login HTTP/1.1" 200 -
+2026-02-26 23:09:49,491 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:09:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:15:13,827 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 23:15:13,976 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.190.43.159:5000
+2026-02-26 23:15:13,976 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-26 23:15:14,036 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-02-26 23:15:16,042 - __main__ - INFO - Supabase client initialized successfully
+2026-02-26 23:15:16,066 - werkzeug - WARNING -  * Debugger is active!
+2026-02-26 23:15:16,071 - werkzeug - INFO -  * Debugger PIN: 120-849-934
+2026-02-26 23:15:17,916 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:17] "GET / HTTP/1.1" 200 -
+2026-02-26 23:15:18,098 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:18] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 23:15:29,100 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:29] "GET /login HTTP/1.1" 200 -
+2026-02-26 23:15:29,161 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:15:38,167 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&username=eq.Jivraj "HTTP/2 200 OK"
+2026-02-26 23:15:38,986 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?username=eq.Jivraj "HTTP/2 200 OK"
+2026-02-26 23:15:43,287 - __main__ - INFO - OTP sent successfully to jkjadav7041@gmail.com
+2026-02-26 23:15:43,290 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-26 23:15:43,316 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:43] "GET /verify HTTP/1.1" 200 -
+2026-02-26 23:15:43,356 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:15:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:16:14,060 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:16:14,976 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:16:14,976 - __main__ - INFO - User verified successfully: jkjadav7041@gmail.com
+2026-02-26 23:16:14,980 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:16:14] "[32mPOST /verify HTTP/1.1[0m" 302 -
+2026-02-26 23:16:15,107 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:16:15,150 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:16:15] "GET /welcome HTTP/1.1" 200 -
+2026-02-26 23:16:15,228 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:16:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:17:20,427 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:17:20,520 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:17:20,528 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:17:20] "POST /welcome HTTP/1.1" 200 -
+2026-02-26 23:17:20,583 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:17:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:17:30,290 - __main__ - INFO - User logged out: jkjadav7041@gmail.com
+2026-02-26 23:17:30,290 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:17:30] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-26 23:17:30,356 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:17:30] "GET / HTTP/1.1" 200 -
+2026-02-26 23:17:30,417 - werkzeug - INFO - 10.190.43.159 - - [26/Feb/2026 23:17:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:18:28,339 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:28] "GET / HTTP/1.1" 200 -
+2026-02-26 23:18:28,727 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:28] "GET /static/style.css HTTP/1.1" 200 -
+2026-02-26 23:18:29,799 - __main__ - WARNING - 404 error: http://10.190.43.159:5000/favicon.ico
+2026-02-26 23:18:29,869 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-26 23:18:41,111 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:41] "GET /login HTTP/1.1" 200 -
+2026-02-26 23:18:41,203 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:18:53,674 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&username=eq.Ansuya "HTTP/2 200 OK"
+2026-02-26 23:18:53,676 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:53] "POST /login HTTP/1.1" 200 -
+2026-02-26 23:18:53,822 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:18:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:19:04,766 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&username=eq.Jivraj "HTTP/2 200 OK"
+2026-02-26 23:19:05,554 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?username=eq.Jivraj "HTTP/2 200 OK"
+2026-02-26 23:19:09,275 - __main__ - INFO - OTP sent successfully to jkjadav7041@gmail.com
+2026-02-26 23:19:09,276 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-26 23:19:09,338 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:09] "GET /verify HTTP/1.1" 200 -
+2026-02-26 23:19:09,524 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:19:37,547 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:19:38,306 - httpx - INFO - HTTP Request: PATCH https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:19:38,306 - __main__ - INFO - User verified successfully: jkjadav7041@gmail.com
+2026-02-26 23:19:38,314 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:38] "[32mPOST /verify HTTP/1.1[0m" 302 -
+2026-02-26 23:19:38,624 - httpx - INFO - HTTP Request: GET https://rruwtamujfmoyimixvfv.supabase.co/rest/v1/usersdata?select=%2A&email=eq.jkjadav7041%40gmail.com "HTTP/2 200 OK"
+2026-02-26 23:19:38,629 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:38] "GET /welcome HTTP/1.1" 200 -
+2026-02-26 23:19:38,706 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:19:51,627 - __main__ - INFO - User logged out: jkjadav7041@gmail.com
+2026-02-26 23:19:51,627 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-26 23:19:51,659 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:51] "GET / HTTP/1.1" 200 -
+2026-02-26 23:19:51,716 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:19:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-02-26 23:20:09,125 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:20:09] "GET / HTTP/1.1" 200 -
+2026-02-26 23:20:09,187 - werkzeug - INFO - 10.190.43.27 - - [26/Feb/2026 23:20:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

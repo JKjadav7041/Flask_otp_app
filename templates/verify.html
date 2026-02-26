@@ -5,43 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify OTP - OTP Auth</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <div class="flash-messages">
                 {% for category, message in messages %}
-                    <div class="flash {{ category }}">{{ message }}</div>
+                    <div class="flash {{ category }}">
+                        <span class="flash-icon">
+                            {% if category == 'success' %}✓{% elif category == 'error' %}✕{% else %}ℹ{% endif %}
+                        </span>
+                        <span class="flash-text">{{ message }}</span>
+                    </div>
                 {% endfor %}
             </div>
         {% endif %}
     {% endwith %}
 
-    <div class="card">
-        <a href="/" class="back-btn">Back</a>
-        <h2>Check your inbox</h2>
-        
-        <p style="margin-bottom: 20px;">Enter the 6-digit security code we sent to your email</p>
+    <div class="auth-container">
+        <div class="auth-card verify-card">
+            <!-- Back Button -->
+            <a href="/" class="back-button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back
+            </a>
 
-        <form method="POST" id="verifyForm">
-            <div class="otp-container">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+            <!-- Header -->
+            <div class="card-header">
+                <div class="icon-wrapper verify-icon">
+                    <svg class="auth-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <div class="icon-pulse"></div>
+                </div>
+                <h1 class="card-title">Check Your Inbox</h1>
+                <p class="card-subtitle">Enter the 6-digit code we sent to your email</p>
             </div>
-            
-            <input type="hidden" name="otp" id="otpValue">
-            <button type="submit" id="verifyBtn">Verify</button>
-        </form>
 
-        <div class="resend-section">
-            <p style="margin: 0;">Didn't receive the email? Check the spam folder.</p>
-            <button class="resend-btn" id="resendBtn" onclick="resendOTP()">Resend OTP</button>
-            <p style="margin-top: 10px; font-size: 12px;" id="timer"></p>
+            <!-- OTP Form -->
+            <form method="POST" id="verifyForm" class="auth-form">
+                <div class="otp-wrapper">
+                    <div class="otp-container">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="otp" id="otpValue">
+                
+                <button type="submit" id="verifyBtn" class="submit-btn verify-btn">
+                    <span class="btn-text">Verify Code</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <!-- Resend Section -->
+            <div class="resend-section">
+                <div class="resend-info">
+                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <p>Didn't receive the code? Check your spam folder</p>
+                </div>
+                <button class="resend-btn" id="resendBtn" onclick="resendOTP()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    Resend Code
+                </button>
+                <p class="timer-text" id="timer"></p>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="floating-shapes">
+            <div class="float-shape float-1"></div>
+            <div class="float-shape float-2"></div>
+            <div class="float-shape float-3"></div>
         </div>
     </div>
 
@@ -60,6 +123,12 @@
                     e.target.value = '';
                     return;
                 }
+
+                // Add animation
+                e.target.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    e.target.style.transform = 'scale(1)';
+                }, 150);
 
                 // Move to next input
                 if (value && index < otpInputs.length - 1) {
@@ -85,6 +154,10 @@
                     pastedData.split('').forEach((char, i) => {
                         if (otpInputs[i]) {
                             otpInputs[i].value = char;
+                            otpInputs[i].style.transform = 'scale(1.1)';
+                            setTimeout(() => {
+                                otpInputs[i].style.transform = 'scale(1)';
+                            }, 150);
                         }
                     });
                     updateOTPValue();
@@ -103,7 +176,6 @@
             updateOTPValue();
             const btn = document.getElementById('verifyBtn');
             btn.disabled = true;
-            btn.textContent = 'Verifying...';
             btn.classList.add('loading');
         });
 
@@ -117,6 +189,7 @@
             const resendBtn = document.getElementById('resendBtn');
             const timer = document.getElementById('timer');
             resendBtn.disabled = true;
+            resendBtn.classList.add('disabled');
             
             const interval = setInterval(() => {
                 countdown--;
@@ -126,6 +199,7 @@
                     clearInterval(interval);
                     canResend = true;
                     resendBtn.disabled = false;
+                    resendBtn.classList.remove('disabled');
                     timer.textContent = '';
                 }
             }, 1000);
@@ -136,7 +210,7 @@
             
             const resendBtn = document.getElementById('resendBtn');
             resendBtn.disabled = true;
-            resendBtn.textContent = 'Sending...';
+            resendBtn.classList.add('loading');
             
             try {
                 const response = await fetch('/resend-otp', {
@@ -149,17 +223,30 @@
                 const data = await response.json();
                 
                 if (data.success) {
-                    // Clear inputs
-                    otpInputs.forEach(input => input.value = '');
-                    otpInputs[0].focus();
+                    // Clear inputs with animation
+                    otpInputs.forEach((input, i) => {
+                        setTimeout(() => {
+                            input.value = '';
+                            input.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                input.style.transform = 'scale(1)';
+                            }, 150);
+                        }, i * 50);
+                    });
+                    setTimeout(() => otpInputs[0].focus(), 300);
                     
                     // Show success message
                     const flashDiv = document.createElement('div');
                     flashDiv.className = 'flash success';
-                    flashDiv.textContent = data.message;
+                    flashDiv.innerHTML = '<span class="flash-icon">✓</span><span class="flash-text">' + data.message + '</span>';
                     document.querySelector('.flash-messages').appendChild(flashDiv);
                     
-                    setTimeout(() => flashDiv.remove(), 5000);
+                    setTimeout(() => {
+                        flashDiv.style.opacity = '0';
+                        flashDiv.style.transform = 'translateX(100px)';
+                        setTimeout(() => flashDiv.remove(), 300);
+                    }, 5000);
+                    
                     startTimer();
                 } else {
                     throw new Error(data.message);
@@ -167,13 +254,17 @@
             } catch (error) {
                 const flashDiv = document.createElement('div');
                 flashDiv.className = 'flash error';
-                flashDiv.textContent = error.message || 'Failed to resend OTP';
+                flashDiv.innerHTML = '<span class="flash-icon">✕</span><span class="flash-text">' + (error.message || 'Failed to resend OTP') + '</span>';
                 document.querySelector('.flash-messages').appendChild(flashDiv);
                 
-                setTimeout(() => flashDiv.remove(), 5000);
+                setTimeout(() => {
+                    flashDiv.style.opacity = '0';
+                    flashDiv.style.transform = 'translateX(100px)';
+                    setTimeout(() => flashDiv.remove(), 300);
+                }, 5000);
             } finally {
+                resendBtn.classList.remove('loading');
                 resendBtn.disabled = false;
-                resendBtn.textContent = 'Resend OTP';
             }
         }
 
@@ -184,7 +275,8 @@
         setTimeout(() => {
             const flashes = document.querySelectorAll('.flash');
             flashes.forEach(flash => {
-                flash.style.animation = 'slideIn 0.3s ease reverse';
+                flash.style.opacity = '0';
+                flash.style.transform = 'translateX(100px)';
                 setTimeout(() => flash.remove(), 300);
             });
         }, 5000);

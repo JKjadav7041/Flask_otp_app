@@ -26,8 +26,8 @@ app.secret_key = "supersecretkey_change_in_production_123!@#"  # ⚠️ CHANGE T
 
 # 🔑 SUPABASE CONFIGURATION
 try:
-    SUPABASE_URL = {"url"}
-    SUPABASE_KEY = {"key"}
+    SUPABASE_URL = "https://rruwtamujfmoyimixvfv.supabase.co"
+    SUPABASE_KEY = "sb_publishable_uV_tgAPJ9D41xFdt9wTBwA_GLpV6d1v"
     supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
     logger.info("Supabase client initialized successfully")
 except Exception as e:

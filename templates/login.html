@@ -5,42 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - OTP Auth</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <div class="flash-messages">
                 {% for category, message in messages %}
-                    <div class="flash {{ category }}">{{ message }}</div>
+                    <div class="flash {{ category }}">
+                        <span class="flash-icon">
+                            {% if category == 'success' %}✓{% elif category == 'error' %}✕{% else %}ℹ{% endif %}
+                        </span>
+                        <span class="flash-text">{{ message }}</span>
+                    </div>
                 {% endfor %}
             </div>
         {% endif %}
     {% endwith %}
 
-    <div class="card">
-        <h2>Welcome Back</h2>
-        
-        <form method="POST" id="loginForm">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input 
-                    type="text" 
-                    id="username"
-                    name="username" 
-                    placeholder="Enter your username" 
-                    required
-                    minlength="3"
-                    maxlength="20"
-                    pattern="[a-zA-Z0-9_]+"
-                    title="Only letters, numbers and underscore allowed"
-                >
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="card-header">
+                <div class="icon-wrapper">
+                    <svg class="auth-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                        <polyline points="10 17 15 12 10 7"></polyline>
+                        <line x1="15" y1="12" x2="3" y2="12"></line>
+                    </svg>
+                </div>
+                <h1 class="card-title">Welcome Back</h1>
+                <p class="card-subtitle">Sign in to continue to your account</p>
             </div>
 
-            <button type="submit" id="submitBtn">Generate OTP</button>
-        </form>
+            <!-- Form -->
+            <form method="POST" id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Username
+                    </label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="username"
+                            name="username" 
+                            class="form-input"
+                            placeholder="Enter your username" 
+                            required
+                            minlength="3"
+                            maxlength="20"
+                            pattern="[a-zA-Z0-9_]+"
+                            title="Only letters, numbers and underscore allowed"
+                        >
+                        <span class="input-border"></span>
+                    </div>
+                </div>
 
-        <p>New user? <a href="/">Create account</a></p>
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span class="btn-text">Generate OTP</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <!-- Footer -->
+            <div class="card-footer">
+                <p class="footer-text">
+                    New user? 
+                    <a href="/" class="footer-link">Create an account</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="floating-shapes">
+            <div class="float-shape float-1"></div>
+            <div class="float-shape float-2"></div>
+            <div class="float-shape float-3"></div>
+        </div>
     </div>
 
     <script>
@@ -48,7 +105,8 @@
         setTimeout(() => {
             const flashes = document.querySelectorAll('.flash');
             flashes.forEach(flash => {
-                flash.style.animation = 'slideIn 0.3s ease reverse';
+                flash.style.opacity = '0';
+                flash.style.transform = 'translateX(100px)';
                 setTimeout(() => flash.remove(), 300);
             });
         }, 5000);
@@ -57,8 +115,20 @@
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             const btn = document.getElementById('submitBtn');
             btn.disabled = true;
-            btn.textContent = 'Sending...';
             btn.classList.add('loading');
+        });
+
+        // Input focus animations
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
         });
     </script>
 </body>

@@ -5,33 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error {{ error_code }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card error-page">
-        <div class="error-code">{{ error_code }}</div>
-        <h2>Oops! {{ error_message }}</h2>
-        
-        <p style="margin: 30px 0;">
-            {% if error_code == 404 %}
-                The page you're looking for doesn't exist.
-            {% elif error_code == 500 %}
-                Something went wrong on our end. We're working on it!
-            {% else %}
-                An unexpected error occurred.
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-card error-card">
+            <!-- Error Icon -->
+            <div class="error-icon-wrapper">
+                <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div class="error-pulse"></div>
+            </div>
+
+            <!-- Error Code -->
+            <div class="error-code-display">
+                <span class="error-number">{{ error_code }}</span>
+            </div>
+
+            <!-- Error Message -->
+            <h1 class="error-title">{{ error_message }}</h1>
+            
+            <p class="error-description">
+                {% if error_code == 404 %}
+                    The page you're looking for doesn't exist or may have been moved.
+                {% elif error_code == 500 %}
+                    Something went wrong on our end. Our team has been notified and we're working on it!
+                {% else %}
+                    An unexpected error occurred. Please try again later.
+                {% endif %}
+            </p>
+
+            <!-- Action Button -->
+            <a href="/" class="home-link">
+                <button class="submit-btn error-btn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="btn-text">Back to Home</span>
+                </button>
+            </a>
+
+            {% if error_code == 500 %}
+            <p class="error-support">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                If this problem persists, please contact our support team
+            </p>
             {% endif %}
-        </p>
+        </div>
 
-        <a href="/">
-            <button style="background: linear-gradient(135deg, #00a8ff 0%, #0086cc 100%);">
-                🏠 Go to Home
-            </button>
-        </a>
-
-        {% if error_code == 500 %}
-        <p style="margin-top: 20px; font-size: 12px; color: rgba(255, 255, 255, 0.4);">
-            If this problem persists, please contact support.
-        </p>
-        {% endif %}
+        <!-- Decorative Elements -->
+        <div class="floating-shapes">
+            <div class="float-shape float-1"></div>
+            <div class="float-shape float-2"></div>
+            <div class="float-shape float-3"></div>
+        </div>
     </div>
 </body>
 </html>
